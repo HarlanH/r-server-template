@@ -10,5 +10,5 @@ log.level <- log4r:::DEBUG
 
 # status web service info
 app.name <- 'TestApp'
-app.version <- 'v0.0.1-1-gd243a55' # replaced dynamically
+app.version <- 'v0.0.1' # replaced dynamically
 app.port <- 9898
