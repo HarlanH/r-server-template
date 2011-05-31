@@ -26,7 +26,7 @@ snapshot: $(OBJS) reversion
 #  builds a tgz file of stuff to be deployed
 release : $(OBJS) test reversion
 	- git branch | grep -q "* master" ; 
-	- git status | grep -qi "up to date"
+	- git status | grep -qi "nothing to commit"
 	tar cvfz testapp-$(TAG_VERSION).tgz $(OBJS)
 
 
