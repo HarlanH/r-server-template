@@ -6,7 +6,7 @@ logfile.name <- '/tmp/testapp.log'
 #logfile.name <- '|grep -v loop2 >> /tmp/testapp.log'
 
 # one of log4r:::DEBUG, INFO, WARN, ERROR, or FATAL
-log.level <- log4r:::DEBUG
+log.level <- log4r:::WARN
 
 # status web service info
 app.name <- 'TestApp'

@@ -17,7 +17,7 @@ put the results in another file or database. This framework will work on unix-al
 
 Features include:
 
-* configuration -- a filename specified on the command line will be sourced, over-riding
+* configuration -- filenames specified on the command line will be sourced, over-riding
 default parameters, such as the location of a log file
 
 * logging -- demonstrates John Myles White's handy `log4r` package
@@ -54,7 +54,7 @@ you'd like to run the server and extract it with `tar xvfz testapp-whatever.tgz`
 
 * Fourth, install the `log4r` and `Rook` R libraries and their dependencies.
 
-* Fifth, run the application: `./testapp.R /path/to/config.R` in a terminal window.
+* Fifth, run the application: `./testapp.R /path/to/testapp-config.R /path/to/testapp-config-local.R` in a terminal window.
 
 * Sixth, verify that the application is running. Watch the dots appear. Look at the log file.
 Hit the web server.

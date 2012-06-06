@@ -27,8 +27,10 @@ logfile.name <- '/tmp/testapp.log'
 log.level <- log4r:::WARN # we've already loaded the package, so OK to use this constant
 
 config.filename <- commandArgs(trailingOnly=TRUE)
-tryCatch(source(config.filename),
-  error=function(e) { cat('error sourcing', config.filename, '\n', as.character(e), '\n'); QuitWithErr() } )
+for (cf in config.filename) { # might have env issues if use lapply 
+  tryCatch(source(cf),
+    error=function(e) { cat('error sourcing', config.filename, '\n', as.character(e), '\n'); QuitWithErr() } )
+}
 
 # set up logging
 tryCatch(lgr <- create.logger(logfile=logfile.name, level=log.level),
@@ -72,7 +74,7 @@ exit.status <- 0
 
 tryCatch(MainLoop(), 
   interrupt=function(e) { warn(lgr, 'caught interrupt') },
-  error=function(e) { fatal(lgr, paste('caught fatal error:', as.character(e))); exit.status <- 1 })
+  error=function(e) { fatal(lgr, paste('caught fatal error:', as.character(e))); exit.status <<- 1 })
 
 ##### SHUT DOWN #####
 
